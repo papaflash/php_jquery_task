@@ -157,7 +157,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
         $secret = $_POST["secret_key"];
         $dadata = new Dadata($token, $secret);
         $dadata->init();
-
+        /*
         $result = [[
             "source" => "Срегей владимерович иванов",
             "result"=> "Иванов Сергей Владимирович",
@@ -170,8 +170,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
             "gender" => "М",
             "qc" => 1
         ]];
-
-        //$result = $dadata->clean("name", $_POST['user_name'] . " " . $_POST['user_second_name'] . " " . $_POST['user_last_name']);
+        */
+        $result = $dadata->clean("name", $_POST['user_name'] . " " . $_POST['user_second_name'] . " " . $_POST['user_last_name']);
         $dadata->close();
     }else {
         $result = ["result" => "Для стандартизации необходимо заполнить минимум два поля: Имя и Фамилия"];
